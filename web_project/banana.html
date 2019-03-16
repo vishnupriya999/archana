@@ -1,0 +1,70 @@
+<html>
+<head><title>banana</title>
+<style>
+div{
+width:800px;
+height:500px;
+margin-top:50px;
+margin-left:270px;
+border:solid white;
+border:solid rgb(255,128,255);
+background-color:white;
+}
+h3
+{
+border:2px groove rgb(55,148,79);
+border-size:5px;
+padding-left:25px;
+margin-left:450px;
+margin-top:-420px;
+margin-right:150px;
+background-color:rgb(192,231,248);
+font-color:red;
+}
+h4{
+margin-left:440px;
+margin-top:60px;
+}
+h5{
+border:2px groove rgb(55,148,79);
+border-size:5px;
+margin-left:550px; 
+padding-left:10px;
+color:white;
+background-color:rgb(95,95,95);
+margin-right:150px;
+}
+h6{
+margin-left:470px;
+padding-left:10px;
+margin-right:40px;
+margin-top:-45px;
+}
+}
+</style>
+</head>
+<body  style="background-color:rgb(0,0,0)">
+<div>
+<img src="https://cdn.shopify.com/s/files/1/0202/7820/products/00567_grande.jpeg?v=1390195074" alt="" height="450px" width="400px" style="margin-top:20px;margin-left:20px">
+
+<h3>Abyssinian Banana</h3>
+<h4>Full sun or part shade. Regular water. 15-20 feet <br>tall and 10-15 feet wide. 10-20 foot long, 2-4 feet wide green leaves. Dark red leaf stalks and leaves tinged in red.</h4>
+<form method="POST" >
+<h5><input type="submit" name="submit" value="Add To Cart"> </h5><h6><input type="number" min="0" max="5"></h6></br>
+<h4 style="padding-left:70px;margin-top:-5px"><b style="color:purple"><i>Colors:</i></b> Green,Red.<br><br><b style="color:purple"><i>Kind:</i></b> Evergreen<br><br><b style="color:purple"><i>Form:</i></b>Tree<br><br><b style="color:purple"><i>Characteristics:</i></b>Shade Tolerant</h4>
+</form>
+</div>
+<?php
+if(isset($_POST["submit"]))
+{
+$sname='Abyssinian Banana';
+$price='200';
+$con=mysqli_connect("localhost","root","");
+mysqli_select_db($con,"cart");
+$query="insert into addtocart values('$sname','$price')";
+$res=mysqli_query($con,"$query");	
+}
+?>
+
+</body>
+</html>
